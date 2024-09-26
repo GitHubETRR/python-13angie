@@ -1,0 +1,50 @@
+albums = [
+    {"titulo": "Taylor Swift", "año": 2006},
+    {"titulo": "Fearless", "año": 2008},
+    {"titulo": "Speak Now", "año": 2010},
+    {"titulo": "Red", "año": 2012},
+    {"titulo": "1989", "año": 2014},
+    {"titulo": "Reputation", "año": 2017},
+    {"titulo": "Lover", "año": 2019},
+    {"titulo": "Folklore", "año": 2020},
+    {"titulo": "Evermore", "año": 2020},
+    {"titulo": "Midnights", "año": 2022},
+    {"titulo": "The Tortured Poets Department", "año": 2024} 
+]
+
+def listar_albums():
+    print("Álbumes de Taylor Swift:")
+    for album in albums:
+        print(f"{album['titulo']} ({album['año']})")
+
+
+def buscar_album():
+    nombre = input("Ingresa el nombre del álbum que queres buscar: ")
+    encontrado = False
+    for album in albums:
+        if album["titulo"].lower() == nombre.lower():
+            print(f"Álbum encontrado: {album['titulo']} ({album['año']})")
+            encontrado = True
+            break
+    if not encontrado:
+        print("Álbum no encontrado.")
+
+def menu():
+    while True:
+        print("\n--- Menú de Opciones ---")
+        print("1. Listar álbumes")
+        print("2. Buscar un álbum por nombre")
+        print("3. Salir")
+        opcion = input("Selecciona una opción: ")
+
+        if opcion == "1":
+            listar_albums()
+        elif opcion == "2":
+            buscar_album()
+        elif opcion == "3":
+            print("Saliendo del programa..")
+            break
+        else:
+            print("Opción no válida, intenta de nuevo.")
+
+menu() #ejecuta el menu
