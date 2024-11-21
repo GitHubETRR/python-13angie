@@ -1,0 +1,29 @@
+#stock de la farmacia (LISTA)
+stock = ["Paracetamol", "Ibuprofeno", "Amoxicilina", "Loratadina", "Aspirina"]
+
+print("Stock de farmacia:")
+print("1. Verificar medicamento")
+print("2. Mostrar todos los medicamentos")
+print("3. Salir")
+
+while True: #bucle principal
+    opcion = input("\nSelecciona una opción: ") #INPUT porque el usuario lo ingresa y se guarda en OPCION
+
+    if opcion == "1":
+        medicamento = input("Ingresa el nombre del medicamento que buscas: ")
+        if medicamento in stock:
+            print(f"'{medicamento}' está disponible.")
+        else:
+            print(f"'{medicamento}' no está disponible.")
+    
+    elif opcion == "2": #else if..
+        print("\nMedicamentos disponibles:")
+        for med in stock: #ciclo FOR recorre cada elemento de la lista, med es la variable temporal que elijo para que se ejecute for
+            print("-" + med) #printea la LISTA, queria poner un guin antes
+    
+    elif opcion == "3": #else if..
+        print("Gracias por usar este programa!!!")
+        break #sale del bucle
+    
+    else:
+        print("Opción no válida. Intenta nuevamente.")
